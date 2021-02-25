@@ -4,12 +4,12 @@ import edu.unbosque.fourpawcitizens.model.dtos.Pet;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Manager {
 
     private String ruta = "./Data/pets-citizens.csv";
     private ArrayList<Pet> pets;
-    private String[] microChip;
 
 
     public Manager() {
@@ -24,23 +24,33 @@ public class Manager {
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
             linea = br.readLine();
-
-            int cont = 0;
-
+            String[] temp;
             while (linea != null) {
-                cont++;
-            }
-            String r ="";
-            for (int i = 0; i < microChip.length ; i++) {
-                r += microChip[i] ;
+                temp = linea.split(";");
+                if(esNumero(temp[0]) && temp.length==6){
+                    pets.add(new Pet("No-ID",Long.parseLong(temp[0]),temp[1],temp[2],temp[3], Boolean.valueOf(temp[4]),temp[5]));
+                }
+                linea = br.readLine();
             }
 
-            System.out.println(r);
-
+            fr.close();
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("No se ha podido leer el archivo :(");
         }
 
     }
+
+
+
+    private boolean esNumero(String m) {
+        try {
+            Long.parseLong(m);
+            return true;
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+
+    }
+
 }

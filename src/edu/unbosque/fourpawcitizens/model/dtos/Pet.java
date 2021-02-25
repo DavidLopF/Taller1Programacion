@@ -7,10 +7,10 @@ public class Pet {
     private String species;
     private String sex;
     private String size;
-    private boolean potentDangerous;
+    private Boolean potentDangerous;
     private String neighborhood;
 
-    public Pet(String id, Long microchip, String species, String sex, String size, boolean potentDangerous, String neighborhood) {
+    public Pet(String id, Long microchip, String species, String sex, String size, Boolean potentDangerous, String neighborhood) {
         this.id = id;
         this.microchip = microchip;
         this.species = species;
@@ -20,6 +20,8 @@ public class Pet {
         this.neighborhood = neighborhood;
     }
 
+
+
     public String getId() {
         return id;
     }
@@ -28,13 +30,6 @@ public class Pet {
         this.id = id;
     }
 
-    public long getMicrochip() {
-        return microchip;
-    }
-
-    public void setMicrochip(long microchip) {
-        this.microchip = microchip;
-    }
 
     public String getSpecies() {
         return species;
@@ -60,20 +55,28 @@ public class Pet {
         this.size = size;
     }
 
-    public boolean isPotentDangerous() {
-        return potentDangerous;
-    }
-
-    public void setPotentDangerous(boolean potentDangerous) {
-        this.potentDangerous = potentDangerous;
-    }
-
     public String getNeighborhood() {
         return neighborhood;
     }
 
     public void setNeighborhood(String neighborhood) {
         this.neighborhood = neighborhood;
+    }
+
+    public Long getMicrochip() {
+        return microchip;
+    }
+
+    public void setMicrochip(Long microchip) {
+        this.microchip = microchip;
+    }
+
+    public Boolean getPotentDangerous() {
+        return potentDangerous;
+    }
+
+    public void setPotentDangerous(Boolean potentDangerous) {
+        this.potentDangerous = potentDangerous;
     }
 
     @Override
