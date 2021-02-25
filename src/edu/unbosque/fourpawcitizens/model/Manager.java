@@ -1,7 +1,8 @@
 package edu.unbosque.fourpawcitizens.model;
 
+import edu.unbosque.fourpawcitizens.model.dtos.Pet;
+
 import java.io.*;
-import java.net.URL;
 import java.util.ArrayList;
 
 public class Manager {
@@ -25,16 +26,15 @@ public class Manager {
             linea = br.readLine();
 
             int cont = 0;
-            while (cont != 100) {
-                microChip = linea.split(";");
-                cont ++;
+
+            while (linea != null) {
+                cont++;
+            }
+            String r ="";
+            for (int i = 0; i < microChip.length ; i++) {
+                r += microChip[i] ;
             }
 
-            String r = "";
-
-            for (int i = 0; i < microChip.length; i++) {
-                r = "." + microChip[i] + "\n";
-            }
             System.out.println(r);
 
         } catch (IOException e) {

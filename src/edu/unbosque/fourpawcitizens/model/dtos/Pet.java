@@ -1,4 +1,4 @@
-package edu.unbosque.fourpawcitizens.model;
+package edu.unbosque.fourpawcitizens.model.dtos;
 
 public class Pet {
 
