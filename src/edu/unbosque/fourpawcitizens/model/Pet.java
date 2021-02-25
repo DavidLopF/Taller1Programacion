@@ -1,19 +1,23 @@
 package edu.unbosque.fourpawcitizens.model;
 
-public class pets {
+public class Pet {
 
     private String id;
-    private long microchip;
+    private Long microchip;
     private String species;
     private String sex;
     private String size;
+    private boolean potentDangerous;
+    private String neighborhood;
 
-    public pets(String id, long microchip, String species, String sex, String size) {
+    public Pet(String id, Long microchip, String species, String sex, String size, boolean potentDangerous, String neighborhood) {
         this.id = id;
         this.microchip = microchip;
         this.species = species;
         this.sex = sex;
         this.size = size;
+        this.potentDangerous = potentDangerous;
+        this.neighborhood = neighborhood;
     }
 
     public String getId() {
@@ -56,6 +60,22 @@ public class pets {
         this.size = size;
     }
 
+    public boolean isPotentDangerous() {
+        return potentDangerous;
+    }
+
+    public void setPotentDangerous(boolean potentDangerous) {
+        this.potentDangerous = potentDangerous;
+    }
+
+    public String getNeighborhood() {
+        return neighborhood;
+    }
+
+    public void setNeighborhood(String neighborhood) {
+        this.neighborhood = neighborhood;
+    }
+
     @Override
     public String toString() {
         return "pets{" +
@@ -64,6 +84,8 @@ public class pets {
                 ", species='" + species + '\'' +
                 ", sex='" + sex + '\'' +
                 ", size='" + size + '\'' +
+                ", potentDangerous=" + potentDangerous +
+                ", neighborhood='" + neighborhood + '\'' +
                 '}';
     }
 }
