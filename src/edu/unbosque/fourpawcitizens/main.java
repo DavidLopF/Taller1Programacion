@@ -2,12 +2,18 @@ package edu.unbosque.fourpawcitizens;
 
 import edu.unbosque.fourpawcitizens.model.Manager;
 
+import java.util.Scanner;
+
 public class main {
-    public static void main(String args []){
+    public static void main(String args[]) {
 
-        Manager manager= new Manager();
+        Manager manager = new Manager();
+        Scanner leer = new Scanner(System.in);
 
+        System.out.println(".:.:.: BIENVENIDO SEÑOR USUARIO :.:.:.");
         manager.leerDocumento();
+        manager.generarIDS();
+
 
     }
 }
