@@ -69,7 +69,7 @@ public class Manager {
                 }
             }
         }
-        return "El proceso de asignación de ids ha finalizado";
+        eturn "El proceso de asignación de ids ha finalizado";
     }
 
 
