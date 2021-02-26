@@ -5,27 +5,16 @@ import edu.unbosque.fourpawcitizens.model.dtos.Pet;
 import java.io.*;
 import java.util.ArrayList;
 
-/**
- * @author David Lopez,Briannys Monserrate, Sergio Peña.
- */
-
 public class Manager {
 
     private String ruta = "./Data/pets-citizens.csv";
     private ArrayList<Pet> pets;
 
-    /**
-     * Metodo constructor de la clase manager.
-     */
+
     public Manager() {
         pets = new ArrayList<>();
     }
 
-    /**
-     * Metodo encargado de leer el archvo pets-citizens.csv y y crear objetos de la clase pet para agregarlos al arraylist pets.
-     *
-     * @return String confirmando el correcto cargue de los datos.
-     */
     public String uploadData() {
         String linea = "";
         File f = new File(ruta);
@@ -48,16 +37,12 @@ public class Manager {
             fr.close();
         } catch (IOException e) {
             e.printStackTrace();
-            return "No se ha podido leer el archivo :(";
+            System.out.println("No se ha podido leer el archivo :(");
         }
 
         return "El proceso de carga del archivo ha finalizado";
     }
 
-    /**
-     * Metodo encargardo de modificar un ID unico para cada objeto de lista tipo pets.
-     * @return String confirmando la correcta asignacion de los datos
-     */
     public String assingID() {
         String id = "";
         String temp, data;
@@ -86,11 +71,7 @@ public class Manager {
         return "El proceso de asignación de ids ha finalizado";
     }
 
-    /**
-     * Metodo encargado de verificar si un string un número (long) de no serlo laza execpcion NumberFormatException
-     * @param m String
-     * @return Boolean
-     */
+
     private boolean esNumero(String m) {
         try {
             Long.parseLong(m);
@@ -101,20 +82,22 @@ public class Manager {
 
     }
 
-    /**
-     * Gets pets.
-     * @return Value of pets.
-     */
     public ArrayList<Pet> getPets() {
         return pets;
     }
 
-    /**
-     * Sets new pets.
-     *
-     * @param pets New value of pets.
-     */
     public void setPets(ArrayList<Pet> pets) {
         this.pets = pets;
+    }
+    public String menu() {
+        String m = ":: Opciones :: " +
+                "\n 1. uploadData" +
+                "\n 2. assignID" +
+                "\n 3. findByMicrochip" +
+                "\n 4. countBySpecies" +
+                "\n 5. findBypotentDangerousInNeighborhood" +
+                "\n 6. findByMultipleFields" +
+                "\n 7. Salir";
+        return m;
     }
 }
