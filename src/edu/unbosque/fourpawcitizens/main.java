@@ -17,6 +17,32 @@ public class main {
         System.out.println(manager.uploadData());
         System.out.println(manager.assingID());
 
+        System.out.println(manager.menu());
+        System.out.println(manager.assingID());
+        String num = "";
+        num = "Ingresa la opción";
+        System.out.println(num);
+        num = leer.nextLine();
+        int n = Integer.parseInt(num);
+        while (n > 0) {
+            if (n == 1) {
+                System.out.println(manager.uploadData());
+            } else if (n == 2) {
+                System.out.println(manager.assingID());
+            } else if (n == 3) {
+
+
+            } else if (n == 4) {
+
+            } else if (n == 5) {
+
+            } else if (n == 6) {
+
+            } else if (n == 7) {
+
+            }
+        }
+
 
     }
 }
