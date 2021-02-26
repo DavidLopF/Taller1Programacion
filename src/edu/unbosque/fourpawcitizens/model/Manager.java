@@ -56,7 +56,7 @@ public class Manager {
 
     /**
      * Metodo encargardo de modificar un ID unico para cada objeto de lista tipo pets.
-     * @return String confirmando la correcta asignacion de los datos 
+     * @return String confirmando la correcta asignacion de los datos
      */
     public String assingID() {
         String id = "";
@@ -83,10 +83,14 @@ public class Manager {
                 }
             }
         }
-        eturn "El proceso de asignación de ids ha finalizado";
+        return "El proceso de asignación de ids ha finalizado";
     }
 
-
+    /**
+     * Metodo encargado de verificar si un string un número (long) de no serlo laza execpcion NumberFormatException
+     * @param m String
+     * @return Boolean
+     */
     private boolean esNumero(String m) {
         try {
             Long.parseLong(m);
@@ -97,10 +101,19 @@ public class Manager {
 
     }
 
+    /**
+     * Gets pets.
+     * @return Value of pets.
+     */
     public ArrayList<Pet> getPets() {
         return pets;
     }
 
+    /**
+     * Sets new pets.
+     *
+     * @param pets New value of pets.
+     */
     public void setPets(ArrayList<Pet> pets) {
         this.pets = pets;
     }

@@ -4,6 +4,9 @@ import edu.unbosque.fourpawcitizens.model.Manager;
 
 import java.util.Scanner;
 
+/**
+ * @author David Lopez ,Briannys Monserrate, Sergio Peña.
+ */
 public class main {
     public static void main(String args[]) {
 
