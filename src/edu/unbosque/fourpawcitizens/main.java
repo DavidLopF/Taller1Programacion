@@ -11,9 +11,9 @@ public class main {
         Scanner leer = new Scanner(System.in);
 
         System.out.println(".:.:.: BIENVENIDO SEÑOR USUARIO :.:.:.");
-        manager.uploadData();
-        manager.assingID();
-     
+        System.out.println(manager.uploadData());
+        System.out.println(manager.assingID());
+
 
     }
 }
