@@ -17,23 +17,23 @@ public class main {
         System.out.println(num);
         num = leer.nextLine();
         int n = Integer.parseInt(num);
-    while (n > 0) {
-        if (n == 1) {
-            System.out.println(manager.uploadData());
-        }else if (n == 2){
-            System.out.println(manager.assingID());
-        }else if (n == 3){
+        while (n > 0) {
+            if (n == 1) {
+                System.out.println(manager.uploadData());
+            } else if (n == 2) {
+                System.out.println(manager.assingID());
+            } else if (n == 3) {
 
-        }else if (n == 4){
+            } else if (n == 4) {
 
-        }else if (n == 5){
+            } else if (n == 5) {
 
-        }else if (n == 6){
+            } else if (n == 6) {
 
-        }else if (n == 7){
+            } else if (n == 7) {
 
+            }
         }
-    }
 
     }
 }
