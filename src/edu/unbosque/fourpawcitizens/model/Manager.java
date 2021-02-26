@@ -4,18 +4,28 @@ import edu.unbosque.fourpawcitizens.model.dtos.Pet;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
+
+/**
+ * @author David Lopez,Briannys Monserrate, Sergio Peña.
+ */
 
 public class Manager {
 
     private String ruta = "./Data/pets-citizens.csv";
     private ArrayList<Pet> pets;
 
-
+    /**
+     * Metodo constructor de la clase manager.
+     */
     public Manager() {
         pets = new ArrayList<>();
     }
 
+    /**
+     * Metodo encargado de leer el archvo pets-citizens.csv y y crear objetos de la clase pet para agregarlos al arraylist pets.
+     *
+     * @return String confirmando el correcto cargue de los datos.
+     */
     public String uploadData() {
         String linea = "";
         File f = new File(ruta);
@@ -38,12 +48,16 @@ public class Manager {
             fr.close();
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("No se ha podido leer el archivo :(");
+            return "No se ha podido leer el archivo :(";
         }
 
         return "El proceso de carga del archivo ha finalizado";
     }
 
+    /**
+     * Metodo encargardo de modificar un ID unico para cada objeto de lista tipo pets.
+     * @return String confirmando la correcta asignacion de los datos 
+     */
     public String assingID() {
         String id = "";
         String temp, data;

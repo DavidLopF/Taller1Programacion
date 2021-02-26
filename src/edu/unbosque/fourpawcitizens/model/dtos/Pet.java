@@ -1,5 +1,8 @@
 package edu.unbosque.fourpawcitizens.model.dtos;
 
+/**
+ * 
+ */
 public class Pet {
 
     private String id;
