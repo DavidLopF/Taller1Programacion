@@ -4,7 +4,6 @@ import edu.unbosque.fourpawcitizens.model.dtos.Pet;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Manager {
 
@@ -69,7 +68,7 @@ public class Manager {
                 }
             }
         }
-        eturn "El proceso de asignación de ids ha finalizado";
+        return "El proceso de asignación de ids ha finalizado";
     }
 
 
@@ -89,5 +88,16 @@ public class Manager {
 
     public void setPets(ArrayList<Pet> pets) {
         this.pets = pets;
+    }
+    public String menu() {
+        String m = ":: Opciones :: " +
+                "\n 1. uploadData" +
+                "\n 2. assignID" +
+                "\n 3. findByMicrochip" +
+                "\n 4. countBySpecies" +
+                "\n 5. findBypotentDangerousInNeighborhood" +
+                "\n 6. findByMultipleFields" +
+                "\n 7. Salir";
+        return m;
     }
 }
