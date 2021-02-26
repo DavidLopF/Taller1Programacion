@@ -27,8 +27,14 @@ public class Manager {
             while (linea != null) {
                 temp = linea.split(";");
                 if (esNumero(temp[0]) && temp.length == 6) {
-                    pets.add(new Pet("No-ID", Long.parseLong(temp[0]), temp[1], temp[2], temp[3], Boolean.valueOf(temp[4]), temp[5]));
+                   if(temp[4].equals("SI")) {
+                       pets.add(new Pet("No-ID", Long.parseLong(temp[0]), temp[1], temp[2], temp[3], true, temp[5]));
+                   }else if(temp[4].equals("NO")){
+                       pets.add(new Pet("No-ID", Long.parseLong(temp[0]), temp[1], temp[2], temp[3], false, temp[5]));
+                   }
                 }
+
+
                 linea = br.readLine();
             }
             System.out.println("Datos leidos con exito");
@@ -39,13 +45,13 @@ public class Manager {
         }
     }
 
-    public void assingIDx   () {
+    public void assingID() {
         String id = "";
         String temp, data;
         for (int i = 0; i < pets.size(); i++) {
             temp = String.valueOf(pets.get(i).getMicrochip());
             temp = temp.substring(temp.length() - 3, temp.length());
-            if (pets.get(i).getPotentDangerous()) {
+            if (pets.get(i).getPotentDangerous() == true) {
                 data = pets.get(i).getSpecies().substring(0, 1) + pets.get(i).getSex().subSequence(0, 1) + pets.get(i).getSize().substring(0, 1) + "T";
             } else {
                 data = pets.get(i).getSpecies().substring(0, 1) + pets.get(i).getSex().subSequence(0, 1) + pets.get(i).getSize().substring(0, 1) + "F";
@@ -64,4 +70,11 @@ public class Manager {
 
     }
 
+    public ArrayList<Pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(ArrayList<Pet> pets) {
+        this.pets = pets;
+    }
 }

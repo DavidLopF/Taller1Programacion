@@ -11,9 +11,9 @@ public class main {
         Scanner leer = new Scanner(System.in);
 
         System.out.println(".:.:.: BIENVENIDO SEÑOR USUARIO :.:.:.");
-        manager.leerDocumento();
-        manager.generarIDS();
-
+        manager.uploadData();
+        manager.assingID();
+     
 
     }
 }
