@@ -15,10 +15,7 @@ public class main {
 
         System.out.println(".:.:.: BIENVENIDO SEÑOR USUARIO :.:.:.");
         System.out.println(manager.uploadData());
-        System.out.println(manager.assingID());
-
         System.out.println(manager.menu());
-        System.out.println(manager.assingID());
         String num = "";
         num = "Ingresa la opción";
         System.out.println(num);
@@ -30,7 +27,9 @@ public class main {
             } else if (n == 2) {
                 System.out.println(manager.assingID());
             } else if (n == 3) {
-
+                System.out.println("Ingrese el micro chip de la mascota a buscar: ");
+                String micro = leer.nextLine();
+                System.out.println(manager.findByMicrochip(micro));
 
             } else if (n == 4) {
 
