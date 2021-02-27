@@ -30,8 +30,15 @@ public class main {
                 System.out.println("Ingrese el micro chip de la mascota a buscar: ");
                 String micro = leer.nextLine();
                 System.out.println(manager.findByMicrochip(micro));
-
             } else if (n == 4) {
+                System.out.println("Ingrese Tipo de animal a buscar FElLINO o CANINO");
+                String input = leer.nextLine();
+                if(input.toLowerCase().equals("FELINO") || input.toUpperCase().equals("CANINO")){
+
+
+                }else{
+                    System.out.println("Ingrese entrada valida :/.");
+                }
 
             } else if (n == 5) {
 
