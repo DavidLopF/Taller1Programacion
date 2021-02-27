@@ -29,8 +29,14 @@ public class main {
                 System.out.println("Ingrese el micro chip de la mascota a buscar: ");
                 String micro = leer.nextLine();
                 System.out.println(manager.findByMicrochip(micro));
-
             } else if (n == 4) {
+                System.out.println("Ingrese Tipo de animal a buscar FELINO o CANINO");
+                String input = leer.nextLine();
+                if(input.toUpperCase().equals("FELINO") || input.equals("CANINO")){
+                    System.out.println(manager.countBySpecies(input.toUpperCase()));
+                }else{
+                    System.out.println("Ingrese entrada valida :/.");
+                }
 
             } else if (n == 5) {
 

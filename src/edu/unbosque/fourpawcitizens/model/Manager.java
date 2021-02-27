@@ -112,6 +112,16 @@ public class Manager {
         return r;
     }
 
+    public String countBySpecies(String especie) {
+        int cont = 0;
+        for (int i = 0; i < pets.size(); i++) {
+            if (especie.equals(pets.get(i).getSpecies())) {
+                cont++;
+            }
+        }
+        return "EL numero de animales de la especie " + especie + " es " + cont;
+    }
+
     public String menu() {
         String m = ":: Opciones :: " +
                 "\n 1. uploadData" +

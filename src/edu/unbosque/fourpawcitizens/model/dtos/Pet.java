@@ -21,8 +21,10 @@ public class Pet {
     }
 
 
+
     public String getId() {
         return id;
+
     }
 
     public void setId(String id) {
@@ -78,16 +80,20 @@ public class Pet {
         this.potentDangerous = potentDangerous;
     }
 
+    /**
+     * Metodo encargado de retornar todos los atributos de la calse pet en un String
+     * @return String
+     */
+
     @Override
     public String toString() {
-        return "pets{" +
-                "id='" + id + '\'' +
-                ", microchip=" + microchip +
-                ", species='" + species + '\'' +
-                ", sex='" + sex + '\'' +
-                ", size='" + size + '\'' +
-                ", potentDangerous=" + potentDangerous +
-                ", neighborhood='" + neighborhood + '\'' +
-                '}';
+        return
+                "iD: " + id +"\n"+
+                "species: " + species + "\n" +
+                "sex :" + sex + "\n" +
+                "size :" + size + '\n' +
+                "potentDangerous :" + potentDangerous +"\n"+
+                "neighborhood :" + neighborhood + "\n" ;
     }
+     
 }
