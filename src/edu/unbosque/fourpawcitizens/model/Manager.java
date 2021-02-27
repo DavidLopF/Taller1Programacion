@@ -43,6 +43,13 @@ public class Manager {
         return "El proceso de carga del archivo ha finalizado";
     }
 
+
+    /**
+     * Metodo encargardo de modificar un ID unico para cada objeto de lista tipo pets.
+     *
+     * @return String confirmando la correcta asignacion de los datos
+     */
+
     public String assingID() {
         String id = "";
         String temp, data;
@@ -72,6 +79,15 @@ public class Manager {
     }
 
 
+    /**
+     * Metodo encargado de verificar si un string un número (long) de no serlo laza execpcion NumberFormatException
+     *
+     * @param m String
+     * @return Boolean
+     */
+
+
+
     private boolean esNumero(String m) {
         try {
             Long.parseLong(m);
@@ -81,6 +97,38 @@ public class Manager {
         }
 
     }
+
+
+    public String findByMicrochip(String micro) {
+        String r = "";
+        for (int i = 0; i < pets.size(); i++) {
+            if (pets.get(i).getMicrochip().toString().equals(micro)) {
+                r = pets.get(i).toString();
+                break;
+            } else {
+                r = "No se ha encontrado mascota con este microchip " + micro;
+            }
+        }
+        return r;
+    }
+
+    public String menu() {
+        String m = ":: Opciones :: " +
+                "\n 1. uploadData" +
+                "\n 2. assignID" +
+                "\n 3. findByMicrochip" +
+                "\n 4. countBySpecies" +
+                "\n 5. findBypotentDangerousInNeighborhood" +
+                "\n 6. findByMultipleFields" +
+                "\n 7. Salir";
+        return m;
+    }
+
+    /**
+     * Gets pets.
+     *
+     * @return Value of pets.
+     */
 
     public ArrayList<Pet> getPets() {
         return pets;
