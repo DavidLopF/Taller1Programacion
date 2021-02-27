@@ -4,9 +4,6 @@ import edu.unbosque.fourpawcitizens.model.Manager;
 
 import java.util.Scanner;
 
-/**
- * @author David Lopez ,Briannys Monserrate, Sergio Peña.
- */
 public class main {
     public static void main(String args[]) {
 
@@ -14,6 +11,7 @@ public class main {
         Scanner leer = new Scanner(System.in);
 
         System.out.println(".:.:.: BIENVENIDO SEÑOR USUARIO :.:.:.");
+
         System.out.println(manager.uploadData());
         System.out.println(manager.menu());
         String num = "";
@@ -27,6 +25,7 @@ public class main {
             } else if (n == 2) {
                 System.out.println(manager.assingID());
             } else if (n == 3) {
+
                 System.out.println("Ingrese el micro chip de la mascota a buscar: ");
                 String micro = leer.nextLine();
                 System.out.println(manager.findByMicrochip(micro));
@@ -46,8 +45,6 @@ public class main {
             } else if (n == 7) {
 
             }
-        }
-
 
     }
 }
