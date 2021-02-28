@@ -44,6 +44,13 @@ public class Manager {
         return "El proceso de carga del archivo ha finalizado";
     }
 
+
+    /**
+     * Metodo encargardo de modificar un ID unico para cada objeto de lista tipo pets.
+     *
+     * @return String confirmando la correcta asignacion de los datos
+     */
+
     public String assingID() {
         String id = "";
         String temp, data;
@@ -73,6 +80,15 @@ public class Manager {
     }
 
 
+    /**
+     * Metodo encargado de verificar si un string un número (long) de no serlo laza execpcion NumberFormatException
+     *
+     * @param m String
+     * @return Boolean
+     */
+
+
+
     private boolean esNumero(String m) {
         try {
             Long.parseLong(m);
@@ -82,14 +98,45 @@ public class Manager {
         }
 
     }
+    /**
+     * Metodo que busca un objeto de la arrayList pets a partir de su número de microchip.
+     *
+     * @param micro Número del microchip  correspondiente a a la mascota a buscar.
+     * @return String con la información del perro, si no se encuentro la mascota retorna un string informando que no se encontro.
+     */
 
-    public ArrayList<Pet> getPets() {
-        return pets;
+
+    public String findByMicrochip(String micro) {
+        String r = "";
+        for (int i = 0; i < pets.size(); i++) {
+            if (pets.get(i).getMicrochip().toString().equals(micro)) {
+                r = pets.get(i).toString();
+                break;
+            } else {
+                r = "No se ha encontrado mascota con este microchip " + micro;
+            }
+        }
+        return r;
     }
 
-    public void setPets(ArrayList<Pet> pets) {
-        this.pets = pets;
+    /**
+     * Metodo que cuenta cuantos objetos del arrayList pets son de una determinada especie.
+     *
+     * @param especie String con que contiene la especie a buscar.
+     * @return numpero de especies encontradas.
+     */
+
+    public String countBySpecies(String especie) {
+        int cont = 0;
+        for (int i = 0; i < pets.size(); i++) {
+            if (especie.equals(pets.get(i).getSpecies())) {
+                cont++;
+            }
+        }
+        return "EL numero de animales de la especie " + especie + " es " + cont;
     }
+
+
     public String menu() {
         String m = ":: Opciones :: " +
                 "\n 1. uploadData" +
@@ -102,5 +149,18 @@ public class Manager {
         return m;
     }
 
+    /**
+     * Gets pets.
+     *
+     * @return Value of pets.
+     */
+
+    public ArrayList<Pet> getPets() {
+        return pets;
+    }
+
+    public void setPets(ArrayList<Pet> pets) {
+        this.pets = pets;
+    }
 }
 

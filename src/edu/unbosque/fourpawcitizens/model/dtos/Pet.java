@@ -23,8 +23,14 @@ public class Pet {
 
     public String getId() {
         return id;
+
     }
 
+    /**
+     * Sets new id.
+     *
+     * @param id New value of id.
+     */
     public void setId(String id) {
         this.id = id;
     }
@@ -78,6 +84,11 @@ public class Pet {
         this.potentDangerous = potentDangerous;
     }
 
+    /**
+     * Metodo encargado de retornar todos los atributos de la calse pet en un String
+     * @return String
+     */
+
     @Override
     public String toString() {
         return "pets{" +
@@ -91,4 +102,5 @@ public class Pet {
                 '}';
     }
 }
+
 
