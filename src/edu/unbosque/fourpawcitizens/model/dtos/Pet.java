@@ -50,6 +50,8 @@ public class Pet {
                 "neighborhood :" + neighborhood + "\n" ;
     }
 
+
+
     /**
      * Sets new id.
      *

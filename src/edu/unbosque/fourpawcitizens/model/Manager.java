@@ -103,6 +103,13 @@ public class Manager {
 
     }
 
+    /**
+     * Metodo que busca un objeto de la arrayList pets a partir de su número de microchip.
+     *
+     * @param micro Número del microchip  correspondiente a a la mascota a buscar.
+     * @return String con la información del perro, si no se encuentro la mascota retorna un string informando que no se encontro.
+     */
+
     public String findByMicrochip(String micro) {
         String r = "";
         for (int i = 0; i < pets.size(); i++) {
@@ -116,6 +123,13 @@ public class Manager {
         return r;
     }
 
+    /**
+     * Metodo que cuenta cuantos objetos del arrayList pets son de una determinada especie.
+     *
+     * @param especie String con que contiene la especie a buscar.
+     * @return numpero de especies encontradas.
+     */
+
     public String countBySpecies(String especie) {
         int cont = 0;
         for (int i = 0; i < pets.size(); i++) {
@@ -125,6 +139,7 @@ public class Manager {
         }
         return "EL numero de animales de la especie " + especie + " es " + cont;
     }
+
 
     public String menu() {
         String m = ":: Opciones :: " +
