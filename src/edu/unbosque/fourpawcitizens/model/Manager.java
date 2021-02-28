@@ -1,6 +1,7 @@
 package edu.unbosque.fourpawcitizens.model;
 
 import edu.unbosque.fourpawcitizens.model.dtos.Pet;
+import org.w3c.dom.ls.LSOutput;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -100,4 +101,6 @@ public class Manager {
                 "\n 7. Salir";
         return m;
     }
+
 }
+
