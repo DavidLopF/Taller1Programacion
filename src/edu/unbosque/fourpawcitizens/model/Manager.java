@@ -155,12 +155,65 @@ public class Manager {
      * @return Value of pets.
      */
 
+
+    public String findByMicrochip(String micro) {
+        String r = "";
+        for (int i = 0; i < pets.size(); i++) {
+            if (pets.get(i).getMicrochip().toString().equals(micro)) {
+                r = pets.get(i).toString();
+                break;
+            } else {
+                r = "No se ha encontrado mascota con este microchip " + micro;
+            }
+        }
+        return r;
+    }
+
+    public String countBySpecies(String especie) {
+        int cont = 0;
+        for (int i = 0; i < pets.size(); i++) {
+            if (especie.equals(pets.get(i).getSpecies())) {
+                cont++;
+            }
+        }
+        return "EL numero de animales de la especie " + especie + " es " + cont;
+    }
+
+    public String menu() {
+        String m = ":: Opciones :: " +
+                "\n 1. uploadData" +
+                "\n 2. assignID" +
+                "\n 3. findByMicrochip" +
+                "\n 4. countBySpecies" +
+                "\n 5. findBypotentDangerousInNeighborhood" +
+                "\n 6. findByMultipleFields" +
+                "\n 7. Salir";
+        return m;
+    }
+
+    /**
+     * Gets pets.
+     *
+     * @return Value of pets.
+     */
+
     public ArrayList<Pet> getPets() {
         return pets;
     }
 
     public void setPets(ArrayList<Pet> pets) {
         this.pets = pets;
+    }
+    public String menu() {
+        String m = ":: Opciones :: " +
+                "\n 1. uploadData" +
+                "\n 2. assignID" +
+                "\n 3. findByMicrochip" +
+                "\n 4. countBySpecies" +
+                "\n 5. findBypotentDangerousInNeighborhood" +
+                "\n 6. findByMultipleFields" +
+                "\n 7. Salir";
+        return m;
     }
 }
 

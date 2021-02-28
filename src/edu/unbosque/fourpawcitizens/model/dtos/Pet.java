@@ -102,5 +102,13 @@ public class Pet {
                 '}';
     }
 }
-
-
+        return
+                "iD: " + id +"\n"+
+                "species: " + species + "\n" +
+                "sex :" + sex + "\n" +
+                "size :" + size + '\n' +
+                "potentDangerous :" + potentDangerous +"\n"+
+                "neighborhood :" + neighborhood + "\n" ;
+    }
+     
+}
