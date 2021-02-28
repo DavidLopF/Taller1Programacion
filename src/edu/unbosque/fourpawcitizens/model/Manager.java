@@ -1,6 +1,7 @@
 package edu.unbosque.fourpawcitizens.model;
 
 import edu.unbosque.fourpawcitizens.model.dtos.Pet;
+import org.w3c.dom.ls.LSOutput;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -102,7 +103,38 @@ public class Manager {
      *
      * @param micro Número del microchip  correspondiente a a la mascota a buscar.
      * @return String con la información del perro, si no se encuentro la mascota retorna un string informando que no se encontro.
+
+    public String findByMicrochip(String micro) {
+        String r = "";
+        for (int i = 0; i < pets.size(); i++) {
+            if (pets.get(i).getMicrochip().toString().equals(micro)) {
+                r = pets.get(i).toString();
+                break;
+            } else {
+                r = "No se ha encontrado mascota con este microchip " + micro;
+            }
+        }
+        return r;
+    }
+
+    /**
+     * Metodo que cuenta cuantos objetos del arrayList pets son de una determinada especie.
+     *
+     * @param especie String con que contiene la especie a buscar.
+     * @return numpero de especies encontradas.
      */
+
+    public String countBySpecies(String especie) {
+        int cont = 0;
+        for (int i = 0; i < pets.size(); i++) {
+            if (especie.equals(pets.get(i).getSpecies())) {
+                cont++;
+            }
+        }
+        return "EL numero de animales de la especie " + especie + " es " + cont;
+    }
+
+
 
 
     public String findByMicrochip(String micro) {
@@ -173,3 +205,4 @@ public class Manager {
         return m;
     }
 }
+

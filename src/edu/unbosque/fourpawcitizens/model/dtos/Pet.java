@@ -21,7 +21,6 @@ public class Pet {
     }
 
 
-
     public String getId() {
         return id;
 
@@ -92,6 +91,17 @@ public class Pet {
 
     @Override
     public String toString() {
+        return "pets{" +
+                "id='" + id + '\'' +
+                ", microchip=" + microchip +
+                ", species='" + species + '\'' +
+                ", sex='" + sex + '\'' +
+                ", size='" + size + '\'' +
+                ", potentDangerous=" + potentDangerous +
+                ", neighborhood='" + neighborhood + '\'' +
+                '}';
+    }
+}
         return
                 "iD: " + id +"\n"+
                 "species: " + species + "\n" +
