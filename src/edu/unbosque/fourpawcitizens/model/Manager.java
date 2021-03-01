@@ -134,7 +134,6 @@ public class Manager {
         return "EL numero de animales de la especie " + especie + " es " + cont;
     }
 
-
     public String findByMultipleFields(String sex, String species, String size,String potentDangerous){
         boolean bandera = false;
         if(potentDangerous.equalsIgnoreCase("si")){
@@ -174,7 +173,6 @@ public class Manager {
                     mascotas.add(pets.get(i));
                 }
             }
-
         }else if(top_last.equalsIgnoreCase("last")){
             if(neighborhood.equalsIgnoreCase("usaquen")){
                 inicio=0;
@@ -205,12 +203,23 @@ public class Manager {
         }
         return -1;
     }
-
     public int findfirstNeighborhoodPosition(String localidad){
         for (int i= 0; i<16936;i++){
             if(pets.get(i).getNeighborhood().equals(localidad.toUpperCase())&&!pets.get(i-1).getNeighborhood().equals(localidad.toUpperCase())){
 
                 return i;
+    /**
+     * Metodo que cuenta cuantos objetos del arrayList pets son de una determinada especie.
+     *
+     * @param especie String con que contiene la especie a buscar.
+     * @return numpero de especies encontradas.
+     */
+
+    public String countBySpecies(String especie) {
+        int cont = 0;
+        for (int i = 0; i < pets.size(); i++) {
+            if (especie.equals(pets.get(i).getSpecies())) {
+                cont++;
             }
         }
         return -1;
@@ -228,12 +237,6 @@ public class Manager {
                 "\n 7. Salir";
         return m;
     }
-
-    /**
-     * Gets pets.
-     *
-     * @return Value of pets.
-     */
 
     /**
      * Gets pets.
