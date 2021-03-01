@@ -54,6 +54,7 @@ public class Manager {
     public String assingID() {
         String id = "";
         String temp, data;
+        System.out.println("- Cargando ID - ");
         System.out.println("Cargando");
         for (int i = 0; i < pets.size(); i++) {
             temp = String.valueOf(pets.get(i).getMicrochip());
@@ -251,6 +252,5 @@ public class Manager {
     public void setPets(ArrayList<Pet> pets) {
         this.pets = pets;
     }
-
 }
 
