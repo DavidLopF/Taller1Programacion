@@ -21,12 +21,16 @@ public class Pet {
     }
 
 
-
     public String getId() {
         return id;
 
     }
 
+    /**
+     * Sets new id.
+     *
+     * @param id New value of id.
+     */
     public void setId(String id) {
         this.id = id;
     }
@@ -87,13 +91,15 @@ public class Pet {
 
     @Override
     public String toString() {
-        return
-                "iD: " + id +"\n"+
-                "species: " + species + "\n" +
-                "sex :" + sex + "\n" +
-                "size :" + size + '\n' +
-                "potentDangerous :" + potentDangerous +"\n"+
-                "neighborhood :" + neighborhood + "\n" ;
+        return "pets{" +
+                "id='" + id + '\'' +
+                ", microchip=" + microchip +
+                ", species='" + species + '\'' +
+                ", sex='" + sex + '\'' +
+                ", size='" + size + '\'' +
+                ", potentDangerous=" + potentDangerous +
+                ", neighborhood='" + neighborhood + '\'' +
+                '}';
     }
      
 }
