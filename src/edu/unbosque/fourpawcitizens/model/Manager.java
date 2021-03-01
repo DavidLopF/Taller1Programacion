@@ -207,7 +207,21 @@ public class Manager {
                     mascotas.add(pets.get(i));
                 }
             }
-
+            }
+        } else if (top_last.equalsIgnoreCase("last")) {
+            if (neighborhood.equalsIgnoreCase("usaquen")) {
+                inicio = 0;
+            } else {
+                inicio = findfirstNeighborhoodPosition(neighborhood);
+            }
+            fin = findLastNeighborhoodPosition(neighborhood);
+            cont = 0;
+            for (int i = fin; i > (fin - n); i--) {
+                if (pets.get(i).getPotentDangerous()) {
+                    cont++;
+                    mascotas.add(pets.get(i));
+                }
+            }
         }
         System.out.println("La cantidad de mascotas se encontró en la localidad: " + neighborhood + " fue " + cont);
         return mascotas;

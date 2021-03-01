@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"edu.unbosque.fourpawcitizens","l":"main"},{"p":"edu.unbosque.fourpawcitizens.model","l":"Manager"},{"p":"edu.unbosque.fourpawcitizens.model.dtos","l":"Pet"}]

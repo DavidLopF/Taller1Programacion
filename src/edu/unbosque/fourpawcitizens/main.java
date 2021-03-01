@@ -114,6 +114,14 @@ public class main {
                 }else{
                     especie = "canino";
                 }
+                }
+                String especie = "";
+                if(specie==1){
+                    especie = "felino";
+                }else{
+                    especie = "canino";
+                }
+
                 String peli = "";
                 if(peligro==1){
                     peli = "si";

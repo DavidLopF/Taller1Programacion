@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"edu.unbosque.fourpawcitizens"},{"l":"edu.unbosque.fourpawcitizens.model"},{"l":"edu.unbosque.fourpawcitizens.model.dtos"}]
