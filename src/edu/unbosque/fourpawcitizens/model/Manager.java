@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 /**
  * Clase Manager, que permite cargar los archivos del programa, y realizar métodos para la funcionalidad de estos.
+ *
  * @author Briannys Ahiram Páez Monserrate, Sergio Eduardo Peña Alméciga, David Leonardo López Forero.
  * @version 5.0
  */
@@ -24,6 +25,7 @@ public class Manager {
 
     /**
      * Método de tipo String que carga el archivo CSV
+     *
      * @return componente de tipo String
      */
     public String uploadData() {
@@ -53,6 +55,7 @@ public class Manager {
 
         return "El proceso de carga del archivo ha finalizado";
     }
+
     /**
      * Metodo encargardo de modificar un ID unico para cada objeto de lista tipo pets.
      *
@@ -88,6 +91,7 @@ public class Manager {
         }
         return "El proceso de asignación de ids ha finalizado";
     }
+
     /**
      * Metodo encargado de verificar si un string un número (long) de no serlo laza execpcion NumberFormatException
      *
@@ -103,6 +107,7 @@ public class Manager {
         }
 
     }
+
     /**
      * Metodo que busca un objeto de la arrayList pets a partir de su número de microchip.
      *
@@ -141,9 +146,10 @@ public class Manager {
 
     /**
      * Método de tipo String que retorna los ids de los animales según su parámetro de busqueda.
-     * @param sex parametro de tipo String que almacena el sexo de la mascota a buscar.
-     * @param species parametro de tipo String que almacena la especie de la mascota a buscar.
-     * @param size parametro de tipo String que almacena la talla de la mascota a buscar.
+     *
+     * @param sex             parametro de tipo String que almacena el sexo de la mascota a buscar.
+     * @param species         parametro de tipo String que almacena la especie de la mascota a buscar.
+     * @param size            parametro de tipo String que almacena la talla de la mascota a buscar.
      * @param potentDangerous parametro de tipo String que almacena si es peligroso o no, de la mascota a buscar.
      * @return componente de tipo String.
      */
@@ -166,8 +172,9 @@ public class Manager {
 
     /**
      * Método de tipo ArrayList que retorna un número dado de animales potencialmente peligrosos de una localidad.
-     * @param n parámetro de tipo int, que almacena la cantidad de buscados.
-     * @param top_last parámetro de tipo String, que almacena si es last o top de csv.
+     *
+     * @param n            parámetro de tipo int, que almacena la cantidad de buscados.
+     * @param top_last     parámetro de tipo String, que almacena si es last o top de csv.
      * @param neighborhood parametro de tipo String, que almacena la localidad.
      * @return componente de tipo ArrayList.
      */
@@ -207,7 +214,7 @@ public class Manager {
                     mascotas.add(pets.get(i));
                 }
             }
-            }
+
         } else if (top_last.equalsIgnoreCase("last")) {
             if (neighborhood.equalsIgnoreCase("usaquen")) {
                 inicio = 0;
@@ -229,6 +236,7 @@ public class Manager {
 
     /**
      * Método de tipo int que devuelve el último valor dada una localidad.
+     *
      * @param localidad parámetro de tipo String que almacena una localidad de una mascota.
      * @return componente de tipo int.
      */
@@ -240,8 +248,10 @@ public class Manager {
         }
         return -1;
     }
+
     /**
      * Método de tipo int que devuelve el primer valor dada una localidad.
+     *
      * @param localidad parámetro de tipo String que almacena una localidad de una mascota.
      * @return componente de tipo int.
      */
@@ -254,6 +264,7 @@ public class Manager {
         }
         return -1;
     }
+
     public String menu() {
         String m = ":: Opciones :: " +
                 "\n 1. uploadData" +
@@ -292,6 +303,7 @@ public class Manager {
     public void setPets(ArrayList<Pet> pets) {
         this.pets = pets;
     }
+
     /**
      * Sets new ruta.
      *
