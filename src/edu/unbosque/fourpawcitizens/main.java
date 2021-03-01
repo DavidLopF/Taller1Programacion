@@ -16,6 +16,16 @@ public class main {
         Scanner leer = new Scanner(System.in);
 
         System.out.println(".:.:.: BIENVENIDO SEÑOR USUARIO :.:.:.");
+        System.out.println(manager.uploadData());
+        System.out.println(manager.getPets().get(773));
+        System.out.println(manager.menu());
+        String num = "";
+        num = "Ingresa la opción";
+        System.out.println(num);
+        num = leer.nextLine();
+        int n = Integer.parseInt(num);
+        while (n > 0) {
+            if (n == 1) {
         int n = 1;
         int aux = -1;
         boolean bandera = false;
@@ -35,6 +45,13 @@ public class main {
                 leer.nextLine();
                 String micro = leer.nextLine();
                 System.out.println(manager.findByMicrochip(micro));
+            } else if (n == 4) {
+                System.out.println("Ingrese Tipo de animal a buscar FELINO o CANINO");
+                String input = leer.nextLine();
+                if (input.toUpperCase().equals("FELINO") || input.equals("CANINO")) {
+                    System.out.println(manager.countBySpecies(input.toUpperCase()));
+                } else {
+                    System.out.println("Ingrese entrada valida :/.");
             }else if(n==4&&bandera==true){
                 int input = -1;
                 do{
@@ -97,6 +114,14 @@ public class main {
                 }else{
                     especie = "canino";
                 }
+                }
+                String especie = "";
+                if(specie==1){
+                    especie = "felino";
+                }else{
+                    especie = "canino";
+                }
+
                 String peli = "";
                 if(peligro==1){
                     peli = "si";
@@ -108,6 +133,7 @@ public class main {
             }else if(n==7){
                 aux++;
             }
+        }
         }while((n<0||n>7)||aux==-1);
     }
 }
