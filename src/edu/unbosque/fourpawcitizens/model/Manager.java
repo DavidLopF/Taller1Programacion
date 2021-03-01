@@ -54,6 +54,7 @@ public class Manager {
     public String assingID() {
         String id = "";
         String temp, data;
+        System.out.println("Cargando");
         for (int i = 0; i < pets.size(); i++) {
             temp = String.valueOf(pets.get(i).getMicrochip());
             temp = temp.substring(temp.length() - 3, temp.length());
@@ -88,7 +89,6 @@ public class Manager {
      */
 
 
-
     private boolean esNumero(String m) {
         try {
             Long.parseLong(m);
@@ -104,8 +104,6 @@ public class Manager {
      * @param micro Número del microchip  correspondiente a a la mascota a buscar.
      * @return String con la información del perro, si no se encuentro la mascota retorna un string informando que no se encontro.
      */
-
-
     public String findByMicrochip(String micro) {
         String r = "";
         for (int i = 0; i < pets.size(); i++) {
@@ -137,6 +135,88 @@ public class Manager {
     }
 
 
+    public String findByMultipleFields(String sex, String species, String size,String potentDangerous){
+        boolean bandera = false;
+        if(potentDangerous.equalsIgnoreCase("si")){
+            bandera = true;
+        }
+        String resultado = "";
+        for (Pet mascota: pets){
+            if(mascota.getSex().equalsIgnoreCase(sex)&&mascota.getSpecies().equalsIgnoreCase(species)&&mascota.getSize().equalsIgnoreCase(size)&&mascota.getPotentDangerous()==bandera){
+
+                    //(mascota.getPotentDangerous()&&potentDangerous.equalsIgnoreCase("si")||!!mascota.getPotentDangerous()&&potentDangerous.equalsIgnoreCase("mo"))){
+                resultado+=mascota.getId();
+                resultado+="\n";
+            }
+        }
+        return resultado;
+    }
+
+    public ArrayList<Pet> findBypotentDangerousInNeighborhood(int n, String top_last, String neighborhood){
+        int cantidad = n;
+        ArrayList<Pet> mascotas = new ArrayList<>();
+        int cont = 0;
+        int inicio = 0;
+        if(neighborhood.equalsIgnoreCase("usaquen")){
+            inicio=0;
+        }else{
+            inicio =findfirstNeighborhoodPosition(neighborhood);
+        }
+        int fin = findLastNeighborhoodPosition(neighborhood);
+        if(inicio==-1||fin==-1){
+            System.out.println("No se encontró la localidad");
+            mascotas = null;
+        }else if(top_last.equalsIgnoreCase("top")){
+            cont = 0;
+            for (int i = inicio;i<(inicio+n);i++){
+                if(pets.get(i).getPotentDangerous()){
+                    cont++;
+                    mascotas.add(pets.get(i));
+                }
+            }
+
+        }else if(top_last.equalsIgnoreCase("last")){
+            if(neighborhood.equalsIgnoreCase("usaquen")){
+                inicio=0;
+            }else{
+                inicio =findfirstNeighborhoodPosition(neighborhood);
+            }
+            fin =findLastNeighborhoodPosition(neighborhood);
+            cont = 0;
+            for (int i = fin; i > (fin-n); i--) {
+                if (pets.get(i).getPotentDangerous()) {
+                    cont++;
+                    mascotas.add(pets.get(i));
+                }
+            }
+
+        }
+        System.out.println("La cantidad de mascotas se encontró en la localidad: "+neighborhood+" fue "+cont);
+        return mascotas;
+    }
+
+
+    //Nos retorna el ultimo valor dada una localidad
+    public int findLastNeighborhoodPosition(String localidad){
+        for (int i= 0; i<16936;i++){
+            if(pets.get(i).getNeighborhood().equals(localidad.toUpperCase())&&!pets.get(i+1).getNeighborhood().equals(localidad.toUpperCase())){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public int findfirstNeighborhoodPosition(String localidad){
+        for (int i= 0; i<16936;i++){
+            if(pets.get(i).getNeighborhood().equals(localidad.toUpperCase())&&!pets.get(i-1).getNeighborhood().equals(localidad.toUpperCase())){
+
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
     public String menu() {
         String m = ":: Opciones :: " +
                 "\n 1. uploadData" +
@@ -154,42 +234,6 @@ public class Manager {
      *
      * @return Value of pets.
      */
-
-
-    public String findByMicrochip(String micro) {
-        String r = "";
-        for (int i = 0; i < pets.size(); i++) {
-            if (pets.get(i).getMicrochip().toString().equals(micro)) {
-                r = pets.get(i).toString();
-                break;
-            } else {
-                r = "No se ha encontrado mascota con este microchip " + micro;
-            }
-        }
-        return r;
-    }
-
-    public String countBySpecies(String especie) {
-        int cont = 0;
-        for (int i = 0; i < pets.size(); i++) {
-            if (especie.equals(pets.get(i).getSpecies())) {
-                cont++;
-            }
-        }
-        return "EL numero de animales de la especie " + especie + " es " + cont;
-    }
-
-    public String menu() {
-        String m = ":: Opciones :: " +
-                "\n 1. uploadData" +
-                "\n 2. assignID" +
-                "\n 3. findByMicrochip" +
-                "\n 4. countBySpecies" +
-                "\n 5. findBypotentDangerousInNeighborhood" +
-                "\n 6. findByMultipleFields" +
-                "\n 7. Salir";
-        return m;
-    }
 
     /**
      * Gets pets.
@@ -204,16 +248,6 @@ public class Manager {
     public void setPets(ArrayList<Pet> pets) {
         this.pets = pets;
     }
-    public String menu() {
-        String m = ":: Opciones :: " +
-                "\n 1. uploadData" +
-                "\n 2. assignID" +
-                "\n 3. findByMicrochip" +
-                "\n 4. countBySpecies" +
-                "\n 5. findBypotentDangerousInNeighborhood" +
-                "\n 6. findByMultipleFields" +
-                "\n 7. Salir";
-        return m;
-    }
+
 }
 
