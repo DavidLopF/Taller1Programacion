@@ -5,9 +5,13 @@ import edu.unbosque.fourpawcitizens.model.Manager;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
+/**
+ * Clase main que maneja toda la funcionalidad del programa.
+ * @author Briannys Ahiram Páez Monserrate, Sergio Eduardo Peña Alméciga, David Leonardo López Forero.
+ * @version 5.0
+ */
 public class main {
     public static void main(String args[]) {
-
         Manager manager = new Manager();
         Scanner leer = new Scanner(System.in);
 
