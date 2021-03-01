@@ -53,6 +53,7 @@ public class Manager {
     public String assingID() {
         String id = "";
         String temp, data;
+        System.out.println("- Cargando ID - ");
         for (int i = 0; i < pets.size(); i++) {
             temp = String.valueOf(pets.get(i).getMicrochip());
             temp = temp.substring(temp.length() - 3, temp.length());
@@ -146,16 +147,5 @@ public class Manager {
 
     public void setPets(ArrayList<Pet> pets) {
         this.pets = pets;
-    }
-    public String menu() {
-        String m = ":: Opciones :: " +
-                "\n 1. uploadData" +
-                "\n 2. assignID" +
-                "\n 3. findByMicrochip" +
-                "\n 4. countBySpecies" +
-                "\n 5. findBypotentDangerousInNeighborhood" +
-                "\n 6. findByMultipleFields" +
-                "\n 7. Salir";
-        return m;
     }
 }

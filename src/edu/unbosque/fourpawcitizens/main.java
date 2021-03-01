@@ -11,8 +11,8 @@ public class main {
         Scanner leer = new Scanner(System.in);
 
         System.out.println(".:.:.: BIENVENIDO SEÑOR USUARIO :.:.:.");
-
         System.out.println(manager.uploadData());
+        System.out.println(manager.getPets().get(773));
         System.out.println(manager.menu());
         String num = "";
         num = "Ingresa la opción";
@@ -32,9 +32,9 @@ public class main {
             } else if (n == 4) {
                 System.out.println("Ingrese Tipo de animal a buscar FELINO o CANINO");
                 String input = leer.nextLine();
-                if(input.toUpperCase().equals("FELINO") || input.equals("CANINO")){
+                if (input.toUpperCase().equals("FELINO") || input.equals("CANINO")) {
                     System.out.println(manager.countBySpecies(input.toUpperCase()));
-                }else{
+                } else {
                     System.out.println("Ingrese entrada valida :/.");
                 }
 
@@ -46,5 +46,6 @@ public class main {
 
             }
 
+        }
     }
 }
